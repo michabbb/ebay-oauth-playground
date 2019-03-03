@@ -38,12 +38,13 @@ with your indiividual ngrok https URL
 
 ####  test routes
 
-Route|method|example URL
----|---|---
-/|welcome|http://abcdefg.ngrok.io/
-/logout|logout|http://abcdefg.ngrok.io/logout
-/refresh|welcome|http://abcdefg.ngrok.io/refreshtoken
-/checktoken{userid}|checktoken|http://abcdefg.ngrok.io/checktoken/ebay_user2019
+Route|method|example URL|notice
+---|---|---|---
+/|welcome|http://abcdefg.ngrok.io/|
+/logout|logout|http://abcdefg.ngrok.io/logout|
+/refresh|refreshtoken|http://abcdefg.ngrok.io/refreshtoken|only if token has **not** expired
+/refresh?force=1|refreshtoken|http://abcdefg.ngrok.io/refreshtoken|refresh token **even it has not yet expired**
+/checktoken{userid}|checktoken|http://abcdefg.ngrok.io/checktoken/ebay_user2019|
 
 #### token store
 
