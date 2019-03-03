@@ -72,3 +72,10 @@ because we have a real timestamp now, we can use `hasExpired` to verify, if the 
 ### You need help with the Ebay API?
 
 **hire me:** `info@macropage.de`
+
+[![Follow me](docs/img/twitter.png)](https://twitter.com/michabbb)  
+
+[![Follow me](docs/img/linkedin.png)](https://www.linkedin.com/in/macropage/)
+
+[![Follow me](docs/img/xing.png)](https://xing.com/profile/Michael_Bladowski/cv)
+
