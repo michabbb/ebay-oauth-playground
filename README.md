@@ -44,7 +44,7 @@ Route|method|example URL|notice
 /logout|logout|http://abcdefg.ngrok.io/logout|
 /refresh|refreshtoken|http://abcdefg.ngrok.io/refreshtoken|only if token has **not** expired
 /refresh|refreshtoken|http://abcdefg.ngrok.io/refreshtoken?force=1|refresh token **even it has not yet expired**
-/checktoken{userid}|checktoken|http://abcdefg.ngrok.io/checktoken/ebay_user2019|
+/checktoken/{userid}|checktoken|http://abcdefg.ngrok.io/checktoken/ebay_user2019|
 
 #### token store
 
