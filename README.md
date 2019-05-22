@@ -29,7 +29,8 @@ if you use docker: `php artisan serve --host 0.0.0.0`
 
 #### setup https for localhost
 
-https://hub.docker.com/r/wernight/ngrok
+https://ngrok.com/  
+if you use docker: https://hub.docker.com/r/wernight/ngrok
 
 Update **Your auth accepted URL** at https://developer.ebay.com/my/auth?env=production&index=0&auth_type=oauth  
 with your indiividual ngrok https URL
@@ -75,7 +76,9 @@ goto `vendor/league/oauth2-client/src/Provider/AbstractProvider.php`
 and add some `dump` calls to show the ebay api result body, i.e.
 
 ```php
-try {
+public function getParsedResponse(RequestInterface $request)
+    {
+        try {
         	dump($request);
         	dump((string)$request->getBody());
             $response = $this->getResponse($request);
@@ -84,6 +87,13 @@ try {
         } catch (BadResponseException $e) {
             $response = $e->getResponse();
         }
+
+        $parsed = $this->parseResponse($response);
+
+        $this->checkResponse($response, $parsed);
+
+        return $parsed;
+    }
 ```
 
 ### You need help with the Ebay API?
