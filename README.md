@@ -69,6 +69,23 @@ resourceOwner|x|storage/app/ebay_userinfo_{userid}
 shows us `expire` (seconds since 01.01.1970) which is a timestamp you can verify with https://www.unixtimestamp.com.  
 because we have a real timestamp now, we can use `hasExpired` to verify, if the token has expired or not.
 
+### Extend debugging ###
+
+goto `vendor/league/oauth2-client/src/Provider/AbstractProvider.php`  
+and add some `dump` calls to show the ebay api result body, i.e.
+
+```php
+try {
+        	dump($request);
+        	dump((string)$request->getBody());
+            $response = $this->getResponse($request);
+            dump($response);
+            dump((string)$response->getBody());
+        } catch (BadResponseException $e) {
+            $response = $e->getResponse();
+        }
+```
+
 ### You need help with the Ebay API?
 
 **hire me:** `info@macropage.de`
